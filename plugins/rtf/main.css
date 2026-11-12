@@ -1,0 +1,87 @@
+/*
+ * Copyright (c) 2026 Zion Nursery & Primary School, Kovaipudur
+ * SPDX-License-Identifier: MIT
+ * Date: 08-Nov-2026
+ */
+.rtf-edit {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    gap: 8px;
+}
+
+.rtf-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    flex: none;
+}
+
+.rtf-tools button,
+.rtf-tools select,
+.rtf-color {
+    height: 32px;
+    min-width: 32px;
+    padding: 0 8px;
+    border: 1px solid #333a45;
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+.rtf-tools select {
+    width: auto;
+    padding: 0 6px;
+    background: #181b21;
+}
+
+.rtf-tools button:hover,
+.rtf-color:hover {
+    background: #262b33;
+}
+
+.rtf-tools .sep {
+    width: 1px;
+    height: 22px;
+    margin: 0 4px;
+    background: #333a45;
+}
+
+.rtf-color {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+.rtf-color input {
+    position: absolute;
+    border-radius: 0;
+    inset: auto 3px 2px;
+    width: calc(100% - 6px);
+    height: 5px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.rtf-color input::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.rtf-color input::-webkit-color-swatch {
+    border: 0;
+}
+
+.rtf-edit .doc[contenteditable] {
+    outline: none;
+    cursor: text;
+}
+
+.rtf-edit .doc[contenteditable]:focus {
+    box-shadow: 0 0 0 2px #2563eb;
+}

@@ -1,0 +1,5 @@
+name,username,password,email,class,date_of_birth
+BOZ,admin,0000,admin@zionschool.com,-,02-Jun-2000
+Winston,winston,1234,winston@zionschool.com,-,-
+Stephen,stephen,1234,,,
+Bob,bob,5678,bob@zionschool.com,4,15-Aug-2017

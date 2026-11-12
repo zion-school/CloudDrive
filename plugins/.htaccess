@@ -1,0 +1,4 @@
+# Plugin PHP files and shared helpers are loaded by the app, never requested directly.
+<FilesMatch "\.(php|md)$">
+    Require all denied
+</FilesMatch>

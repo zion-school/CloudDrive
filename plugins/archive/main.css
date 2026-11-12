@@ -1,0 +1,119 @@
+/*
+ * Copyright (c) 2026 Zion Nursery & Primary School, Kovaipudur
+ * SPDX-License-Identifier: MIT
+ * Date: 08-Nov-2026
+ */
+/* Archive browser inside the (always dark) viewer */
+.arc {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.arc-crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 4px;
+    font-size: 14px;
+    color: #9aa1ad;
+    overflow-wrap: anywhere;
+}
+
+.arc-crumbs a {
+    color: #c9cdd4;
+    text-decoration: none;
+}
+
+.arc-crumbs a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.arc-crumbs span {
+    color: #fff;
+    font-weight: 600;
+}
+
+.arc-crumbs i {
+    font-style: normal;
+    opacity: .5;
+}
+
+.arc-list {
+    background: #181b21;
+    border: 1px solid #2c313a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.arc-it {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) 90px 160px;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    padding: 8px 12px;
+    background: none;
+    border: 0;
+    border-top: 1px solid #2c313a;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.arc-it:first-child {
+    border-top: 0;
+}
+
+.arc-it:hover,
+.arc-it:focus-visible {
+    background: #262b33;
+    outline: none;
+}
+
+.arc-nm {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.arc-it small {
+    color: #9aa1ad;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.arc-lock .i {
+    width: 14px;
+    height: 14px;
+    margin-left: 6px;
+    vertical-align: -2px;
+    color: #f5d48a;
+}
+
+.arc-empty {
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+}
+
+.arc-sum {
+    padding: 0 4px;
+}
+
+@media (max-width: 600px) {
+    .arc-it {
+        grid-template-columns: 32px minmax(0, 1fr) auto;
+        gap: 10px;
+        padding: 8px 10px;
+    }
+
+    .arc-it small:last-child {
+        display: none;
+    }
+}

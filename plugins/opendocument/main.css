@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2026 Zion Nursery & Primary School, Kovaipudur
+ * SPDX-License-Identifier: MIT
+ * Date: 08-Nov-2026
+ */
+/* .odp: one card per slide on the (always white) document page */
+.doc .slide {
+    margin: 0 0 20px;
+    padding: 12px 20px 16px;
+    border: 1px solid #c8ccd4;
+    border-radius: 8px;
+}
+
+.doc .slide > :last-child {
+    margin-bottom: 0;
+}
+
+.doc .slide-no {
+    margin: 0 0 8px;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.doc .slide-empty {
+    color: #6b7280;
+    font-style: italic;
+}

@@ -1,0 +1,156 @@
+/*
+ * Copyright (c) 2026 Zion Nursery & Primary School, Kovaipudur
+ * SPDX-License-Identifier: MIT
+ * Date: 09-Nov-2026
+ */
+/* 3D viewer inside the (always dark) viewer: the canvas fills the preview, controls float over it */
+.pbody:has(> .m3d) {
+    position: relative;
+    overflow: hidden;
+}
+
+.m3d {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #13161a;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.m3d canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    cursor: grab;
+}
+
+.m3d canvas:active {
+    cursor: grabbing;
+}
+
+.m3d-msg {
+    color: #9aa1ad;
+    padding: 16px;
+    text-align: center;
+}
+
+.m3d-tools {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 4px;
+}
+
+.m3d-tools button,
+.m3d-layers label {
+    padding: 5px 10px;
+    border: 1px solid #333a45;
+    border-radius: 6px;
+    background: rgba(24, 27, 33, .85);
+    color: #e6e8ec;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.m3d-tools button:hover {
+    background: #262b33;
+}
+
+.m3d-info {
+    position: absolute;
+    left: 12px;
+    bottom: 10px;
+    max-width: calc(100% - 24px);
+    font-size: 13px;
+    line-height: 1.5;
+    color: #c9cdd4;
+    pointer-events: none;
+    text-shadow: 0 1px 2px #000;
+}
+
+.m3d-info b {
+    color: #fff;
+    font-weight: 600;
+}
+
+.m3d-info small {
+    display: block;
+    color: #7d8590;
+}
+
+.m3d-legend {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 12px;
+    color: #c9cdd4;
+    pointer-events: none;
+}
+
+.m3d-legend i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+    border-radius: 2px;
+    vertical-align: -1px;
+}
+
+/* G-code: layer slider (bottom right, above the info) */
+.m3d-layers {
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+    width: min(360px, 50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.m3d-layers input[type=range] {
+    flex: 1;
+    min-width: 0;
+    accent-color: #ff8a1f;
+}
+
+.m3d-layers label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+    .m3d-tools button {
+        padding: 4px 7px;
+        font-size: 12px;
+    }
+
+    .m3d-info small,
+    .m3d-legend {
+        display: none;
+    }
+
+    .m3d-layers {
+        left: 12px;
+        right: 12px;
+        width: auto;
+        bottom: 58px;
+    }
+}
+
+.m3d:has(.m3d-layers) .m3d-info {
+    max-width: calc(50% - 24px);
+}
